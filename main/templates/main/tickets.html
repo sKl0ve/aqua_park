@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Форма по бронированию билетов{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Бронирование билетов</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.name }} <br>
+            {{ form.number }} <br>
+            {{ form.email }}<br>
+            {{ form.qnt }}<br>
+            <span>{{ message }}</span><br>
+            <button class="btn btn-success" type="submit">Зарезервировать билеты</button>
+
+        </form>
+
+{% endblock %}
